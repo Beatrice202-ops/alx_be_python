@@ -37,20 +37,20 @@ while time_bound not in ("yes", "no"):
 # Match Case requires Python 3.10+
 match priority:
     case "high":
-        reminder = f"High priority task: {task}."
+        reminder = f"{task}, is a high priority task that requires immediate attention today!"
     case "medium":
-        reminder = f"Medium priority task: {task}."
+        reminder = f"{task}, is a medium priority task that requires less attention today!"
     case "low":
-        reminder = f"Low priority task: {task}."
+        reminder = f"{task}, is a low priority task. Consider completing it when you have free time."
     case _:
         # Shouldn't happen because we validated, but keep a safe fallback
         reminder = f"Task: {task} (unknown priority: {priority})."
 
 # Time-sensitivity tweak
 if time_bound == "yes":
-    reminder += " This task is time-bound and requires immediate attention today!"
+    reminder += " This task is time-bound "
 else:
-    reminder += " This task is not time-bound; plan it accordingly."
+    reminder += " This task is not time-bound"
 
 # --- Output ---
 print(reminder)
