@@ -21,7 +21,6 @@ def main():
     print(account.display_balance())
 
 
-if __name__ == "__main__":
-    main()
+
 
 
